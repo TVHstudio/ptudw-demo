@@ -63,6 +63,13 @@ app.get('/tracking-order', (req,res) => {
     res.render('tracking-order');
 });
 
+app.get('/sync',(req,res) => {
+    let models = require('./models');
+    models.sequelize.sync()
+    .then(()=>{
+        res.send('database sync completed!')
+    });
+});
 
 app.set('port', process.env.PORT || 3000);
 app.listen(app.get('port'), ()=> {
