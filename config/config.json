@@ -1,26 +1,35 @@
 {
-  "development": {
-    "username": "udiltaiahnnopp",
-    "password": "1f344e1df5d68d1e820a565b3df2ce064dd8fb928b2560ba394416878f1d9756",
-    "database": "d2rcoecnmm1t3f",
-    "host": "ec2-52-70-45-163.compute-1.amazonaws.com",
-    "dialect": "postgres",
-    "dialectOptions": {
-      "ssl":true
+    "development": {
+        "username": "udiltaiahnnopp",
+        "password": "1f344e1df5d68d1e820a565b3df2ce064dd8fb928b2560ba394416878f1d9756",
+        "database": "d2rcoecnmm1t3f",
+        "host": "ec2-52-70-45-163.compute-1.amazonaws.com",
+        "dialect": "postgres",
+        "dialectOptions": {
+            "ssl": {
+                "require": true,
+                "rejectUnauthorized": false
+                }
+        }
+    },
+    "test": {
+        "username": "postgres",
+        "password": "postgres",
+        "database": "aromadb",
+        "host": "localhost",
+        "dialect": "postgres"
+    },
+    "production": {
+        "username": "udiltaiahnnopp",
+        "password": "1f344e1df5d68d1e820a565b3df2ce064dd8fb928b2560ba394416878f1d9756",
+        "database": "d2rcoecnmm1t3f",
+        "host": "ec2-52-70-45-163.compute-1.amazonaws.com",
+        "dialect": "postgres",
+        "dialectOptions": {
+            "ssl": {
+                "require": true,
+                "rejectUnauthorized": false
+                }
+        }
     }
-  },
-  "test": {
-    "username": "root",
-    "password": null,
-    "database": "database_test",
-    "host": "127.0.0.1",
-    "dialect": "mysql"
-  },
-  "production": {
-    "username": "root",
-    "password": null,
-    "database": "database_production",
-    "host": "127.0.0.1",
-    "dialect": "mysql"
-  }
 }
