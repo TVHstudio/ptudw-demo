@@ -4,7 +4,9 @@
     "password": "1f344e1df5d68d1e820a565b3df2ce064dd8fb928b2560ba394416878f1d9756",
     "database": "d2rcoecnmm1t3f",
     "host": "ec2-52-70-45-163.compute-1.amazonaws.com",
-    "dialect": "postgres"
+    "port": 5432,
+    "dialect": "postgres",
+    "URI":"postgres://udiltaiahnnopp:1f344e1df5d68d1e820a565b3df2ce064dd8fb928b2560ba394416878f1d9756@ec2-52-70-45-163.compute-1.amazonaws.com:5432/d2rcoecnmm1t3f"
   },
   "test": {
     "username": "root",
