@@ -1,15 +1,17 @@
 const express = require('express');
 const app = express();
 const expressHbs = require('express-handlebars');
-
 app.engine('hbs',expressHbs.engine({
     layoutsDir: __dirname + '/views/layouts',
     partialsDir:__dirname + '/views/partials',
     extname : 'hbs',
     defaultLayout : 'layouts',
+    runtimeOptions : {allowProtoPropertiesByDefault : true}
 }));
 app.set('view engine', 'hbs');
 app.use(express.static(__dirname + '/public'));
+app.use(express.json());
+app.use(express.urlencoded({extended: false}));
 
 // app.get('/:page', (req,res) => {
 //     let banners = {
@@ -25,10 +27,17 @@ app.use(express.static(__dirname + '/public'));
 //     let page = req.params.page;
 //     res.render(page, {banner: banners[page]});
 // });
-
+//get truc tiep
+// app.get('/',(req,res) => {
+//     res.render('index')
+// })
+//get qua router:
 app.get('/',(req,res) => {
-    res.render('index')
+    res.render('index');
 })
+
+app.use('/products',require('./routes/productRouter'));
+
 app.get('/blog', (req,res) => {
     res.render('blog');
 });
