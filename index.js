@@ -32,9 +32,7 @@ app.use(express.urlencoded({extended: false}));
 //     res.render('index')
 // })
 //get qua router:
-app.get('/',(req,res) => {
-    res.render('index');
-})
+app.use('/',require('./routes/indexRouter'));
 
 app.use('/products',require('./routes/productRouter'));
 

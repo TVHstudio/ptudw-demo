@@ -3,21 +3,20 @@ const models = require('../models');
 const Product = models.Product;
 
 controller.getAllProducts = () => {
-    // return new Promise((resolve, reject) => {
-    //     Product.findAll({
-    //         include : [
-    //             {model : models.Category}
-    //         ]                       
-    //     })
-    //     .then(data => resolve(data))
-    //     .catch(error => reject(new Error(error)));
-    // } )
-
-    return Product.findAll({
-        include: [
-            { model: models.Category }
-        ]
-    })
+    return new Promise((resolve, reject) => {
+        Product.findAll({
+            include : [
+                {model : models.Category}
+            ]                       
+        })
+        .then(data => resolve(data))
+        .catch(error => reject(new Error(error)));
+    } )
+    // return Product.findAll({
+    //     include: [
+    //         { model: models.Category }
+    //     ]
+    // })
 }
 
 controller.getTopProducts = () => {
@@ -39,5 +38,21 @@ controller.getTopProducts = () => {
     })
 }
 
+controller.getTrendingProducts = () => {
+    return new Promise((resolve, reject) => {
+        Product.findAll({
+            order : [
+                ['overallReview', 'DESC']
+            ],
+            limit: 8,
+            include : [
+                {model : models.Category}
+            ],
+            attributes: ['id','name','imagepath','price']                       
+        })
+        .then(data => resolve(data))
+        .catch(error => reject(new Error(error)));
+    } )
+}
 
 module.exports = controller;
