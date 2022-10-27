@@ -1,8 +1,13 @@
 const express = require('express');
 const router = express.Router();
 const productController = require('../controllers/productController');
+const categoryController = require('../controllers/categoryController');
 
-router.get('/products', (req,res) => {
+
+
+
+
+router.get('/', (req,res) => {
     productController.getTopProducts()
     .then(topProducts => {
         res.locals.topProducts = topProducts;
