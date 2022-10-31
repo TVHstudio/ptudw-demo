@@ -2,7 +2,7 @@ const controller ={};
 //const { reject } = require('lodash');
 //const { promise } = require('selenium-webdriver');
 const models = require('../models');
-var Category = models.Brand;
+var Brand = models.Brand;
 
 controller.getAll = () => {
     return new Promise((resolve, reject) => {
