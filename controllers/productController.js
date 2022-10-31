@@ -54,8 +54,7 @@ controller.getTrendingProducts = () => {
 
 controller.getById = (id) => {
     return new Promise((resolve, reject) => {
-        Product
-        .findOne({
+        Product.findOne({
             where: {id : id},
             include : [{model : models.Category}]
         })
