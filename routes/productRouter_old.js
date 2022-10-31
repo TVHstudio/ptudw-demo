@@ -14,4 +14,13 @@ router.get('/', (req,res) => {
     })
 });
 
+
+.then(data => {
+    res.locals.topProducts = data;
+    let productController = require('../controllers/productController');  
+    return productController.getTopProducts();
+})
+
 module.exports = router;
+
+
