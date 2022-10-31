@@ -54,11 +54,37 @@ controller.getTrendingProducts = () => {
 
 controller.getById = (id) => {
     return new Promise((resolve, reject) => {
-        Product.findOne({
+        let product;
+        Product
+        .findOne({
             where: {id : id},
             include : [{model : models.Category}]
         })
-        .then(result => resolve(result))
+        .then(result => {
+            product = result;
+            return models.ProductSpecification.findAll({
+                where: { productId : id},
+                include : [{ model : models.Specification }]
+            });
+        })
+        .then(ProductSpecifications => {
+            product.ProductSpecifications = ProductSpecifications;
+            return models.Comment.findAll({
+                where: { productId : id, parentCommentId: null },
+                include : [{ model : models.User },
+                    {
+                        model : models.Comment,
+                        as : 'SubComments',
+                        include : [{ model : models.User }]
+                    }                
+                ]
+            });            
+        })
+        .then(comments => {
+            product.comments =comments;
+            resolve(product);
+        })
+
         .catch(error => reject(new Error(error)));
     });
 };
