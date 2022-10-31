@@ -53,7 +53,7 @@ controller.getTrendingProducts = () => {
 };
 
 controller.getById = (id) => {
-    return new Promise((resolve,reject) => {
+    return new Promise((resolve, reject) => {
         Product
         .findOne({
             where: {id : id},
