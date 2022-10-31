@@ -14,7 +14,8 @@ let hbs = expressHbs.create({
     partialsDir:__dirname + '/views/partials',
     runtimeOptions : {allowProtoPropertiesByDefault : true},
     helpers: {
-        createStarList : helper.createStarList
+        createStarList : helper.createStarList,
+        createStars : helper.createStars
     }   
 });
 app.engine('hbs',hbs.engine);

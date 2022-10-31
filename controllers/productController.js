@@ -81,7 +81,7 @@ controller.getById = (id) => {
             });            
         })
         .then(comments => {
-            product.comments =comments;
+            product.Comments =comments;
             return models.Review.findAll({
                 where: { productId : id},
                 include : [{ model : models.User }]
