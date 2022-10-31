@@ -1,74 +1,28 @@
-const express = require('express');
-const app = express();
-const expressHbs = require('express-handlebars');
-app.engine('hbs',expressHbs.engine({
-    layoutsDir: __dirname + '/views/layouts',
-    partialsDir:__dirname + '/views/partials',
+let express = require('express');
+
+let app = express();
+app.use(express.static(__dirname + '/public'));
+
+let expressHbs = require('express-handlebars');
+
+let helper = require('./controllers/helper');
+
+let hbs = expressHbs.create({
     extname : 'hbs',
     defaultLayout : 'layouts',
-    runtimeOptions : {allowProtoPropertiesByDefault : true}
-}));
-app.set('view engine', 'hbs');
-app.use(express.static(__dirname + '/public'));
-app.use(express.json());
-app.use(express.urlencoded({extended: false}));
+    layoutsDir: __dirname + '/views/layouts',
+    partialsDir:__dirname + '/views/partials',
+    runtimeOptions : {allowProtoPropertiesByDefault : true},
+    helpers: {
+        createStarList : helper.createStarList
+    }   
+});
+app.engine('hbs',hbs.engine);
 
-// app.get('/:page', (req,res) => {
-//     let banners = {
-//         blog : 'Our blog',
-//         category : 'Shop Category',
-//         cart : 'Shopping Cart',
-//         checkout : 'Checkout',
-//         confirmation : 'Confirmation',
-//         contact : 'Contact',
-//         register : 'Register',
-//         login : 'login',
-//     };
-//     let page = req.params.page;
-//     res.render(page, {banner: banners[page]});
-// });
-//get truc tiep
-// app.get('/',(req,res) => {
-//     res.render('index')
-// })
-//get qua router:
+app.set('view engine', 'hbs');  
+
 app.use('/',require('./routes/indexRouter'));
-
 app.use('/products',require('./routes/productRouter'));
-
-app.get('/blog', (req,res) => {
-    res.render('blog');
-});
-app.get('/cart', (req,res) => {
-    res.render('cart');
-});
-app.get('/category', (req,res) => {
-    res.render('category');
-});
-app.get('/checkout', (req,res) => {
-    res.render('checkout');
-});
-app.get('/confirmation', (req,res) => {
-    res.render('confirmation');
-});
-app.get('/contact', (req,res) => {
-    res.render('contact');
-});
-app.get('/register', (req,res) => {
-    res.render('register');
-});
-app.get('/login', (req,res) => {
-    res.render('login');
-});
-app.get('/single-blog', (req,res) => {
-    res.render('single-blog');
-});
-app.get('/single-product', (req,res) => {
-    res.render('single-product');
-});
-app.get('/tracking-order', (req,res) => {
-    res.render('tracking-order');
-});
 
 app.get('/sync',(req,res) => {
     let models = require('./models');
