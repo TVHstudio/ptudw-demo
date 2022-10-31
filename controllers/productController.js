@@ -52,7 +52,7 @@ controller.getTrendingProducts = () => {
     });
 };
 
-controller.getById =(id) => {
+controller.getById = (id) => {
     return new Promise((resolve,reject) => {
         Product
         .findOne({
