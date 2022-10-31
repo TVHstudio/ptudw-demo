@@ -22,11 +22,12 @@ router.get('/', (req,res,next) => {
     .then(data => {
         res.locals.products = data;
         return productController.getAllProducts();
+    })
     .then(data => {
         res.locals.colors = data;       
         res.render('category'); 
     })                
-     })
+     
     .catch(error => next(error));
 });
 
