@@ -51,6 +51,11 @@ router.get('/', (req,res,next) => {
     }) 
     .then(data => {
         res.locals.products = data;
+        res.locals.pagination = {
+            page: parseInt(req.query.page),
+            limit: parseInt(req.query.limit),
+            totalRows: data.count
+        };
         res.render('category'); 
     })                    
     .catch(error => next(error));
