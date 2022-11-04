@@ -89,7 +89,7 @@ $(function() {
     noUiSlider.create(nonLinearSlider, {
         connect: true,
         behaviour: 'tap',
-        start: [ urlParams.get('min'), urlParams.get('max') ],
+        start: [urlParams.get('min'), urlParams.get('max') ],
         range: {
             // Starting at 500, step the value by 500,
             // until 4000 is reached. From there, step by 1000.
@@ -113,7 +113,7 @@ $(function() {
     });
     nonLinearSlider.noUiSlider.on('end', function ( values, handle, unencoded, isTap, positions ) {
       let value = values[handle];
-      let keys = ['min','max'];
+      let key = ['min','max'];
       selectParam(key[handle], value);
   });
   
