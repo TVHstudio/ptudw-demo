@@ -1,0 +1,26 @@
+PTUDW-DTTX-HK1-2223-Buoi3
+
+* Muc tieu buoi hoc: Giai dap thac mac
+- Floating Point
+
+=> Bieu dien so duoi dang nhi phan
+
+3.4
+
+3 => 11
+3/2 = 1 du 1 => 1
+1/2 = 0 du 1 => 1
+
+0.4 => .01100110....
+0.4 * 2 = 0.8 => 0, du 0.8
+0.8 * 2 = 1.6 => 1, du 0.6
+0.6 * 2 = 1.2 => 1, du 0.2
+0.2 * 2 = 0.4 => 0, du 0.4
+
+0.1 + 0.2 => 0.30000000000...4
+
+* Yeu cau ve nha:
+- Xem bai giang Javascript 2
+- Lam Lab JavaScript nang cao => co the tham khao video huong dan
+
+

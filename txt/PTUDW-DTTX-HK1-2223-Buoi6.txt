@@ -1,0 +1,43 @@
+* Muc tieu buoi hoc
+- Huong dan su dung express-handlebars
+
++ Cai dat package
+$ pnpm install -s express-handlebars
+
++ Chep thu muc free template (html, css, images, js...) vao thu muc lam viec
+- public
+
++ Tao cac thu muc va file handlebars
+- views
+    |- layouts
+        |- layout.hbs => chep noi dung cua trang index.html, xac dinh vung noi thay doi la {{{body}}}
+    |- partials
+        |- *.hbs => khi su dung thi dung cau truc {{>tenfile}}
+    |- *.hbs 
+
++ Dinh nghia su dung handlebars
+const expressHbs = require('express-handlebars');
+
+app.engine('hbs', expressHbs.engine({
+    layoutsDir: __dirname + '/views/layouts',
+    partialsDir: __dirname + '/views/partials',
+    extname: 'hbs',
+    defaultLayout: 'layout'
+}));
+app.set('view engine', 'hbs');
+
+app.use(express.static(__dirname + '/public'));
+
++ De hien thi trang web
+res.render('tentranghbs')
+
+
+- Cau hinh express de doc duoc du lieu gui theo phuong thuc post
+
+app.use(express.json());
+app.use(express.urlencoded({ extended: false }));
+
+* Yeu cau ve nha
+- Xem tiep yeu cau tuan 7
+- Thuc hanh Project 1
+

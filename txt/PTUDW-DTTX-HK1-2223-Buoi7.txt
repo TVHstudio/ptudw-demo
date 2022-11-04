@@ -1,0 +1,13 @@
+PTUDW-DTTX-HK1-2223-Buoi7.txt
+
+* Muc tieu buoi hoc
+- Huong dan giai quyet mot so van de trong MBook Tuan 7
+=> Xem trong file PTUDW-MBook-Update.docx: https://bit.ly/ptudw-mbook
+- Tao code sequelize tu Database
+Tham khao: https://github.com/sequelize/sequelize-auto
+
+* Yeu cau ve nha
+- Lam Project Aroma Part 3, Part 4 (Part 2 khong nop, chi can lam cho biet)
+https://bit.ly/ptudw-youtube
+
+Luu y: Project Aroma khac Project Bookstore trong MBook

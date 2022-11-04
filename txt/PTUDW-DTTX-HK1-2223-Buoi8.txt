@@ -1,0 +1,9 @@
+PTUDW-DTTX-HK1-2223-Buoi8
+
+* Muc tieu buoi hoc
+- Giai dap thac mac (neu co)
+- Huong dan xu ly du lieu truoc khi hien thi doi voi cac giao dien phuc tap (khong phai dang mang 1 chieu)
+- Huong dan viet lai code theo async await
+
+* Yeu cau ve nha:
+- Hoan thanh Project Aroma Part 3, 4

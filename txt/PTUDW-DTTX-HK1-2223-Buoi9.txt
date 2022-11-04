@@ -1,0 +1,14 @@
+PTUDW-DTTX-HK1-2223-Buoi9
+
+* Muc tieu buoi hoc
+- Giai dap thac mac neu co
+- Free Host Postgresql
+https://www.elephantsql.com/
++ Dang ky tai khoan (Sign Up)
++ Tao CSDL (Create Instance)
++ Su dung cau hinh ket noi CSDL => config.json
+
+* Yeu cau ve nha
+- Hoan thanh Project Part 4, 5, 6
+
+=> Tuan sau nghi le 2/9

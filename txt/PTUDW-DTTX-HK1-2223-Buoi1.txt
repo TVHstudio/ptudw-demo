@@ -1,0 +1,43 @@
+PTUDW-DTTX-HK1-2223-Buoi1
+
+Chao cac ban, chung ta cho khoang 10ph cho moi nguoi vao dong du roi bat dau nhe!
+
+Cac ban vui long doi ten theo qui dinh: MSSV - Ho ten
+
+- Muc tieu buoi hoc
++ Gioi thieu mon hoc
+PTUDW: Back-end: NodeJS => JS/ES6 + Postgres
+=> Express, HandlebarJS, Sequelize
+Front-end: su dung free template co san
+=> Xay dung 1 website ban hang truc tuyen don gian
+
++ Cach hoc mon nay
+=> Xem MBook + Thuc hanh lai trong MBook
+=> Xem Video Thuc hanh Project => Lam lai
+=> Quiz, Lab => Moodle
+Deadline Quiz, Lab, Project => 31/10/2022, co the nop tu bay gio
+
+Chuong trinh DTTX
++ Web1 (TTBHanh): Front-End: HTML5, CSS/Bootstrap, JS, Handlebars, Fetch JS => Web API co san de lay du lieu
+
++ Web2 (LVMinh): Back-End: PHP + MySQL
+
++ PTUDW (TTBHanh): Back-End: NodeJS (JS) + Postgres
+
+Web1 + Web2
+Web1 + PTUDW
+PTUDW
+
++ Hinh thuc thi cuoi ky: Thi thuc hanh truc tiep tren may (duoc su dung laptop, internet)
++ Thang diem: 6d thi cuoi ky + 1 diem thao luan + 3d bai tap (quiz, lab, project)
+
++ Yeu cau ve nha
+Xem trong file Ke hoach hoc tap
+https://tinyurl.com/ptudw-dttx-hk1-2223
+
+
+
+
++ Kiem thu phan mem: guru99.com
+
+

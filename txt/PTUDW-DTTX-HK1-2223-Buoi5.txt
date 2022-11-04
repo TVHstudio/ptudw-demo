@@ -1,0 +1,35 @@
+PTUDW-DTTX-HK1-2223-Buoi5
+
+* Muc tieu buoi hoc:
++ Huong dan su dung github
+- Dang ky tai khoan github
+https://github.com/
+Tao 1 repository tren github vua dang ky
+- Cai dat git tren may tinh
+https://git-scm.com/downloads
+- Clone repository ve may tinh
+
+(Cai dat Extension Github trong VS Code de thao tac)
++ Tao Web Server don gian su dung Express
+- Khoi tao file package.json
+$ npm init -y
+- Cai dat module express
+$ pnpm install express
+- Tao file index.js va dinh nghia web express don gian
+
+- Tao file .gitignore, cau hinh bao cho git biet ko quan tam thu muc node_modules
+- Thuc hien commit va sync ma nguon de upload len github
+
++ Trien khai ung dung web len Free Host Heroku
+- Dang ky tai khoan tren heroku
+https://id.heroku.com/login
+- Check email verify tai khoan
+- Dang nhap
+- Chon Create new app
+- Dat ten app: ptudw-mssv
+- Tab Deploy => chon Deployment method la Github => chon repository da tao o tren
+=> Enable automatic deploys => deploy branch de deploy lan dau tien
+
+Luu y neu sau khi deploy thanh cong ma ung dung web ko chay duoc thi phai kiem tra da cau hinh script start trong file package.json chua
+
+
