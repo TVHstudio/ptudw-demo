@@ -1,13 +1,20 @@
 const controller = {};
 const models = require('../models');
 const Product = models.Product;
+let Sequelize = require('sequelize');
+let Op = Sequelize.Op;
 
 controller.getAllProducts = (query) => {
     return new Promise((resolve, reject) => {
         let options ={           
                 include : [{model : models.Category}], 
                 attributes: ['id','name','imagepath','price'],
-                where: {}                                   
+                where: {
+                    price: {
+                        [Op.gte] : query.min,
+                        [Op.lte] : query.max
+                    }
+                }                                   
         };
         if(query.category > 0){
             options.where.categoryId = query.category;
@@ -22,6 +29,36 @@ controller.getAllProducts = (query) => {
                 where : {colorId : query.color }
             });
         }
+        if(query.limit > 0){
+            options.limit = query.limit;
+            options.offset = query.limit * (query.page - 1)
+        }
+        if(query.sort > 0){
+            switch (query.sort) {
+                case 'name' :
+                    options.order = [
+                        ['name','ASC']
+                    ];
+                    break;
+                case 'price' :
+                    options.order = [
+                        ['price','ASC']
+                    ];
+                    break;
+                case 'overallReview' :
+                    options.order = [
+                        ['overallReview','ASC']
+                    ];
+                 break;
+                default :
+                    options.order = [
+                        ['name','ASC']
+                    ];
+                break;         
+            }
+        }
+
+
         Product.findAll(options)
         .then(data => resolve(data))
         .catch(error => reject(new Error(error)));
